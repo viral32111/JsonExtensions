@@ -55,6 +55,7 @@ jobs:
           ./Library/bin/Release/viral32111.JsonExtensions.*.nupkg
 
     - name: Add GitHub Packages Source
+      if: ${{ github.ref_type == 'tag' && github.event_name != 'pull_request' }}
       run: |
         dotnet nuget add source \
           --name github \
@@ -64,6 +65,7 @@ jobs:
           "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
 
     - name: Upload Package
+      if: ${{ github.ref_type == 'tag' && github.event_name != 'pull_request' }}
       run: |
         dotnet nuget push \
           --source github \
