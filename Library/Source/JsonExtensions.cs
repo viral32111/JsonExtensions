@@ -60,6 +60,9 @@ namespace viral32111.JsonExtensions {
 			// Save the JSON to the file
 			jsonObject.SaveToFile( filePath );
 
+			// Remember this object's file path
+			objectFilePaths[ jsonObject ] = filePath;
+
 			// Return the same (or new) JSON
 			return jsonObject;
 
