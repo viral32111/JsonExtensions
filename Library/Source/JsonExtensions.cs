@@ -93,11 +93,10 @@ namespace viral32111.JsonExtensions {
 				string propertyName = propertyNames[ index ];
 
 				// Set the value of the property with this name if this is the last iteration
-				if ( ( index + 1 ) == propertyNames.Length ) {
-					nextObject[ propertyName ] = newValue;
+				if ( ( index + 1 ) == propertyNames.Length ) nextObject[ propertyName ] = newValue;
 
-					// If this is not the last iteration...
-				} else {
+				// If this is not the last iteration...
+				else {
 
 					// Set the property with this name to an empty JSON object if it does not exist
 					if ( !nextObject.ContainsKey( propertyName ) ) nextObject.Add( propertyName, new JsonObject() );
@@ -134,11 +133,10 @@ namespace viral32111.JsonExtensions {
 				if ( !nextObject.TryGetPropertyValue( propertyName, out JsonNode? value ) ) throw new JsonPropertyNotFoundException( $"Nested property '{propertyName}' in '{propertyPath}' does not exist" );
 
 				// Return the value if this is the last iteration
-				if ( ( index + 1 ) == propertyNames.Length ) {
-					return value;
+				if ( ( index + 1 ) == propertyNames.Length ) return value;
 
-					// If this is not the last iteration...
-				} else {
+				// If this is not the last iteration...
+				else {
 
 					// Fail if the value is invalid
 					if ( value == null ) throw new JsonPropertyNullException( $"Nested property '{propertyName}' in '{propertyPath}' is null, it cannot be used as the next object" );
