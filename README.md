@@ -47,7 +47,7 @@ Version history:
 ### Save JSON to file
 
 <pre>
-void <a href="https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject">System.Text.Json.Nodes.JsonObject</a>.<a href="./Library/Source/JsonExtensions.cs#L72-83">SaveToFile</a>( string? filePath )
+void <a href="https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject">System.Text.Json.Nodes.JsonObject</a>.<a href="./Library/Source/JsonExtensions.cs#L72-L83">SaveToFile</a>( string? filePath )
 </pre>
 
 Saves this [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject) to the file at the specified path. Defaults to the path used to read or create the file if no path is specified.
@@ -67,7 +67,7 @@ void <a href="https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsono
 Sets the specified nested property in this [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject) to the specified value. Dots (`.`) are used to separate nested property names.
 
 The following exceptions may be thrown:
- * [`viral32111.JsonExtensions.JsonPropertyNullException`](./Library/Source/JsonExtensions.cs#L204-L207) if one of the property names expected to be a [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject) is null.
+ * [`viral32111.JsonExtensions.JsonPropertyNullException`](./Library/Source/JsonExtensions.cs#L216-L219) if one of the property names expected to be a [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject) is null.
 
 Version history:
  * This method has not changed since `0.1.0`.
