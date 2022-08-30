@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonExtensions", "Library\JsonExtensions.csproj", "{85AA1230-BC44-40D9-B796-A133C8C0C56E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{B665BC38-FBF8-459C-8FA8-5EE21CA69E88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examples", "Examples\Examples.csproj", "{B665BC38-FBF8-459C-8FA8-5EE21CA69E88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
