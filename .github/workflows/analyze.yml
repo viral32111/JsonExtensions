@@ -13,8 +13,10 @@ on:
 
 jobs:
   analyze:
+    name: Analyze
     runs-on: ubuntu-22.04
     permissions:
+      contents: read
       security-events: write
 
     steps:
