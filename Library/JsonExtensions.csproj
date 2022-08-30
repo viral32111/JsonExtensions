@@ -21,6 +21,15 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>viral32111.JsonExtensions</PackageId>
     <AssemblyName>$(MSBuildProjectName)</AssemblyName>
+    <PackageProjectUrl>https://github.com/viral32111/JsonExtensions/packages/1617512</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
