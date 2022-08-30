@@ -2,6 +2,11 @@
 
 This is a NuGet package adding several useful creation and extension methods to [`System.Text.Json`](https://docs.microsoft.com/dotnet/api/system.text.json) data types.
 
+## Notes
+
+* Class Library Project
+* .NET 6.0 (LTS)
+
 ## License
 
 Copyright (C) 2022 [viral32111](https://viral32111.com).
