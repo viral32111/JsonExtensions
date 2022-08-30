@@ -83,10 +83,10 @@ Gets the specified nested property in this [`JsonObject`](https://docs.microsoft
 The following exceptions may be thrown:
  * [`viral32111.JsonExtensions.JsonPropertyNullException`](./Library/Source/JsonExtensions.cs#L216-L219) if one of the property names expected to be a [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject) is null.
  * [`viral32111.JsonExtensions.JsonPropertyNotFoundException`](./Library/Source/JsonExtensions.cs#L210-L213) if one of the property names cannot be found.
- * [`System.Text.Json.JsonException`](https://docs.microsoft.com/dotnet/api/system.text.json.jsonexception) if the nested property could not be found.
+ * [`viral32111.JsonExtensions.JsonPropertyNotFoundException`](./Library/Source/JsonExtensions.cs#L210-L213) if the nested property could not be found.
 
 Version history:
- * This method has not changed since `0.1.0`.
+ * **`0.1.2`**: [`viral32111.JsonExtensions.JsonPropertyNotFoundException`](./Library/Source/JsonExtensions.cs#L210-L213) is now thrown instead of [`System.Text.Json.JsonException`](https://docs.microsoft.com/dotnet/api/system.text.json.jsonexception) when the nested property cannot be found.
 
 ### Get nested property as type
 

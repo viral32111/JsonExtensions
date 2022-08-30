@@ -152,7 +152,7 @@ namespace viral32111.JsonExtensions {
 			}
 
 			// Fail if the loop never ran
-			throw new JsonException( $"Could not find nested property '{propertyPath}'" );
+			throw new JsonPropertyNotFoundException( $"Could not find nested property '{propertyPath}'" );
 
 		}
 
