@@ -52,7 +52,7 @@ jobs:
         path: |
           ./Library/bin/Release/net6.0/JsonExtensions.dll
           ./Library/bin/Release/net6.0/JsonExtensions.deps.json
-          ./Library/bin/Release/JsonExtensions.*.nupkg
+          ./Library/bin/Release/viral32111.JsonExtensions.*.nupkg
 
     - name: Add GitHub Packages Source
       run: |
@@ -68,7 +68,7 @@ jobs:
         dotnet nuget push \
           --source github \
           --api-key ${{ secrets.GITHUB_TOKEN }} \
-          ./Library/bin/Release/JsonExtensions.*.nupkg
+          ./Library/bin/Release/viral32111.JsonExtensions.*.nupkg
 
   test:
     name: Test
