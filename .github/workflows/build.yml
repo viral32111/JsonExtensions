@@ -67,6 +67,7 @@ jobs:
       run: |
         dotnet nuget push \
           --source github \
+          --skip-duplicate \
           --api-key ${{ secrets.GITHUB_TOKEN }} \
           ./Library/bin/Release/viral32111.JsonExtensions.*.nupkg
 
