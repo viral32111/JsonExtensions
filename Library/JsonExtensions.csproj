@@ -20,7 +20,7 @@
     <RootNamespace>viral32111.JsonExtensions</RootNamespace>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>viral32111.JsonExtensions</PackageId>
-    <AssemblyName>$(MSBuildProjectName)</AssemblyName>
+    <AssemblyName>$(Authors).$(MSBuildProjectName)</AssemblyName>
     <PackageProjectUrl>https://github.com/viral32111/JsonExtensions/packages/1617512</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
