@@ -106,6 +106,13 @@ namespace Examples {
 
 			/******************************************************************/
 
+			exampleObject.NestedSet( "hello", null );
+
+			string[] listOfPropertyPaths = exampleObject.NestedList();
+			foreach ( string propertyPath in listOfPropertyPaths ) Console.WriteLine( " - {0}", propertyPath );
+
+			/******************************************************************/
+
 			Console.WriteLine( "Saving to file: '{0}'...", filePath );
 			exampleObject.SaveToFile();
 			Console.WriteLine( "Saved to file: '{0}'...", filePath );

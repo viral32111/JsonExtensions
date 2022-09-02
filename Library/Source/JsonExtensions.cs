@@ -237,6 +237,43 @@ namespace viral32111.JsonExtensions {
 
 		}
 
+		// Gets a list of nested property paths in the JSON object
+		public static string[] NestedList( this JsonObject jsonObject ) {
+			return ListNestedProperties( jsonObject ).ToArray();
+		}
+
+		// Recursively creates a list of nested property paths in the JSON object
+		private static List<string> ListNestedProperties( JsonObject jsonObject, string currentPath = "", List<string>? propertyPaths = null ) {
+
+			// Create an empty list to hold the property paths if it is not set
+			propertyPaths ??= new();
+
+			// Loop through each valid property in the object...
+			foreach ( KeyValuePair<string, JsonNode?> property in jsonObject ) {
+				
+				// Create the path to this property by using the last call's path and this property name
+				string propertyPath = currentPath + property.Key;
+
+				// If the value is null then it must be a value so add it to the list
+				if ( property.Value == null ) {
+					propertyPaths.Add( propertyPath );
+					continue;
+				}
+
+				// Attempt to repeat this call with the value as a JSON object, otherwise add it to the list as it must be a value
+				try {
+					ListNestedProperties( property.Value.AsObject(), propertyPath + nestedPropertyDelimiter, propertyPaths );
+				} catch ( InvalidOperationException ) {
+					propertyPaths.Add( propertyPath );
+				}
+
+			}
+
+			// Return the list
+			return propertyPaths;
+
+		}
+
 	}
 
 	// Exception for when parsing fails

@@ -23,7 +23,7 @@ using viral32111.JsonExtensions;
 Parses the contents of the file at the specified path as JSON and returns a [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject).
 
 The following exceptions may be thrown:
- * [`viral32111.JsonExtensions.JsonParseException`](./Library/Source/JsonExtensions.cs#L204-L207) if the JSON within the file is invalid.
+ * [`viral32111.JsonExtensions.JsonParseException`](./Library/Source/JsonExtensions.cs#L280-L283) if the JSON within the file is invalid.
  * [`System.IO.FileNotFoundException`](https://docs.microsoft.com/dotnet/api/system.io.filenotfoundexception) if the file at the specified path cannot be found.
    * *In this case you should create a new JSON file with [`JsonExtensions.CreateNewFile()`](#create-a-new-json-file).*
 
@@ -67,7 +67,7 @@ void <a href="https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsono
 Sets the specified nested property in this [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject) to the specified value. Dots (`.`) are used to separate nested property names.
 
 The following exceptions may be thrown:
- * [`viral32111.JsonExtensions.JsonPropertyNullException`](./Library/Source/JsonExtensions.cs#L216-L219) if one of the property names expected to be a [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject) is null.
+ * [`viral32111.JsonExtensions.JsonPropertyNullException`](./Library/Source/JsonExtensions.cs#L292-L295) if one of the property names expected to be a [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject) is null.
 
 Version history:
  * This method has not changed since `0.1.0`.
@@ -81,12 +81,12 @@ Version history:
 Gets the specified nested property in this [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject), and returns it as a [`JsonNode`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonnode) (may be null). Dots (`.`) are used to separate nested property names.
 
 The following exceptions may be thrown:
- * [`viral32111.JsonExtensions.JsonPropertyNullException`](./Library/Source/JsonExtensions.cs#L216-L219) if one of the property names expected to be a [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject) is null.
- * [`viral32111.JsonExtensions.JsonPropertyNotFoundException`](./Library/Source/JsonExtensions.cs#L210-L213) if one of the property names cannot be found.
- * [`viral32111.JsonExtensions.JsonPropertyNotFoundException`](./Library/Source/JsonExtensions.cs#L210-L213) if the nested property could not be found.
+ * [`viral32111.JsonExtensions.JsonPropertyNullException`](./Library/Source/JsonExtensions.cs#L292-L295) if one of the property names expected to be a [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject) is null.
+ * [`viral32111.JsonExtensions.JsonPropertyNotFoundException`](./Library/Source/JsonExtensions.cs#L286-L289) if one of the property names cannot be found.
+ * [`viral32111.JsonExtensions.JsonPropertyNotFoundException`](./Library/Source/JsonExtensions.cs#L286-L289) if the nested property could not be found.
 
 Version history:
- * **`0.1.2`**: [`viral32111.JsonExtensions.JsonPropertyNotFoundException`](./Library/Source/JsonExtensions.cs#L210-L213) is now thrown instead of [`System.Text.Json.JsonException`](https://docs.microsoft.com/dotnet/api/system.text.json.jsonexception) when the nested property cannot be found.
+ * **`0.1.2`**: [`viral32111.JsonExtensions.JsonPropertyNotFoundException`](./Library/Source/JsonExtensions.cs#L286-L289) is now thrown instead of [`System.Text.Json.JsonException`](https://docs.microsoft.com/dotnet/api/system.text.json.jsonexception) when the nested property cannot be found.
 
 ### Get nested property as type
 
@@ -97,7 +97,7 @@ Version history:
 Gets the specified nested property in this [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject) as the specified data type. See [`JsonObject.NestedGet()`](#get-nested-property) for more information.
 
 The following exceptions may be thrown:
- * [`viral32111.JsonExtensions.JsonPropertyNullException`](./Library/Source/JsonExtensions.cs#L216-L219) if the nested property is null.
+ * [`viral32111.JsonExtensions.JsonPropertyNullException`](./Library/Source/JsonExtensions.cs#L292-L295) if the nested property is null.
  * See [`JsonObject.NestedGet()`](#get-nested-property) for more exceptions that may be thrown.
 
 Version history:
@@ -112,7 +112,7 @@ Version history:
 Converts this [`JsonNode`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonnode) to a [`JsonArray`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonarray) then to an array of the specified data type.
 
 The following exceptions may be thrown:
- * [`viral32111.JsonExtensions.JsonPropertyNullException`](./Library/Source/JsonExtensions.cs#L216-L219) if a value in the array is null.
+ * [`viral32111.JsonExtensions.JsonPropertyNullException`](./Library/Source/JsonExtensions.cs#L292-L295) if a value in the array is null.
 
 Version history:
  * This method has not changed since `0.1.0`.
@@ -140,7 +140,21 @@ bool <a href="https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsono
 Checks if a nested property exists in this [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject). A null property value counts as the property existing.
 
 The following exceptions may be thrown:
- * [`viral32111.JsonExtensions.JsonPropertyNullException`](./Library/Source/JsonExtensions.cs#L216-L219) if one of the property names expected to be a [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject) is null.
+ * [`viral32111.JsonExtensions.JsonPropertyNullException`](./Library/Source/JsonExtensions.cs#L292-L295) if one of the property names expected to be a [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject) is null.
+
+Version history:
+ * This method was added in `0.2.0`.
+ 
+### List nested property
+
+<pre>
+string[] <a href="https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject">System.Text.Json.Nodes.JsonObject</a>.<a href="./Library/Source/JsonExtensions.cs#L241-L275">NestedList</a>()
+</pre>
+
+Creates a list of paths to all nested properties in this [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject), null property values are included.
+
+The following exceptions may be thrown:
+ * No exceptions should be thrown when using this method.
 
 Version history:
  * This method was added in `0.2.0`.
