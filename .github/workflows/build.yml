@@ -48,7 +48,7 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: JsonExtensions
+        name: viral32111.JsonExtensions
         path: |
           ./Library/bin/Release/net6.0/viral32111.JsonExtensions.dll
           ./Library/bin/Release/net6.0/viral32111.JsonExtensions.deps.json
