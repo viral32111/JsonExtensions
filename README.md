@@ -117,7 +117,6 @@ The following exceptions may be thrown:
 Version history:
  * This method has not changed since `0.1.0`.
 
-
 ### Clone node
 
 <pre>
@@ -128,6 +127,20 @@ Creates a copy of this [`JsonNode`](https://docs.microsoft.com/dotnet/api/system
 
 The following exceptions may be thrown:
  * No exceptions should be thrown when using this method.
+
+Version history:
+ * This method was added in `0.2.0`.
+ 
+### Has nested property
+
+<pre>
+bool <a href="https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject">System.Text.Json.Nodes.JsonObject</a>.<a href="./Library/Source/JsonExtensions.cs#L207-L238">NestedHas</a>( string propertyPath )
+</pre>
+
+Checks if a nested property exists in this [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject). A null property value counts as the property existing.
+
+The following exceptions may be thrown:
+ * [`viral32111.JsonExtensions.JsonPropertyNullException`](./Library/Source/JsonExtensions.cs#L216-L219) if one of the property names expected to be a [`JsonObject`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject) is null.
 
 Version history:
  * This method was added in `0.2.0`.

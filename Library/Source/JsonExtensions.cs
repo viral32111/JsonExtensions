@@ -203,6 +203,40 @@ namespace viral32111.JsonExtensions {
 			return JsonSerializer.Deserialize<JsonNode>( node ); // https://stackoverflow.com/a/71590703
 		}
 
+		// Checks if a nested property exists
+		public static bool NestedHas( this JsonObject jsonObject, string propertyPath ) {
+
+			// Separate the path into individual property names
+			string[] propertyNames = propertyPath.Split( nestedPropertyDelimiter );
+
+			// The JSON object to search, starts at the root
+			JsonObject nextObject = jsonObject;
+
+			// Loop through each property name...
+			for ( int index = 0; index < propertyNames.Length; index++ ) {
+				string propertyName = propertyNames[ index ];
+
+				// Fail if we cannot get the property
+				if ( !nextObject.TryGetPropertyValue( propertyName, out JsonNode? value ) ) return false;
+
+				// If this is not the last iteration...
+				if ( ( index + 1 ) < propertyNames.Length ) {
+
+					// Fail if the value is invalid
+					if ( value == null ) throw new JsonPropertyNullException( $"Nested property '{propertyName}' in '{propertyPath}' is null, it cannot be used as the next object" );
+
+					// Set this value as the next JSON object to search
+					nextObject = value.AsObject();
+
+				}
+
+			}
+
+			// Success if we got here
+			return true;
+
+		}
+
 	}
 
 	// Exception for when parsing fails

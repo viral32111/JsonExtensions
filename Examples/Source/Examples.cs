@@ -98,6 +98,14 @@ namespace Examples {
 
 			/******************************************************************/
 
+			bool oneTwoThreeFour = exampleObject.NestedHas( "one.two.three.four" );
+			Console.WriteLine( "one.two.three.four: {0}", oneTwoThreeFour );
+
+			bool doIExist = exampleObject.NestedHas( "do.i.exist" );
+			Console.WriteLine( "do.i.exist: {0}", doIExist );
+
+			/******************************************************************/
+
 			Console.WriteLine( "Saving to file: '{0}'...", filePath );
 			exampleObject.SaveToFile();
 			Console.WriteLine( "Saved to file: '{0}'...", filePath );
