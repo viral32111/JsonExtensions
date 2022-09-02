@@ -93,6 +93,11 @@ namespace Examples {
 
 			/******************************************************************/
 
+			JsonNode? nodeCopy = exampleObject.NestedGet( "hello" ).Clone();
+			Console.WriteLine( "Copied node: {0}", nodeCopy );
+
+			/******************************************************************/
+
 			Console.WriteLine( "Saving to file: '{0}'...", filePath );
 			exampleObject.SaveToFile();
 			Console.WriteLine( "Saved to file: '{0}'...", filePath );

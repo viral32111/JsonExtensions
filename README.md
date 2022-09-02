@@ -117,6 +117,21 @@ The following exceptions may be thrown:
 Version history:
  * This method has not changed since `0.1.0`.
 
+
+### Clone node
+
+<pre>
+<a href="https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonnode">JsonNode</a>? <a href="https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonnode">System.Text.Json.Nodes.JsonNode</a>?.<a href="./Library/Source/JsonExtensions.cs#L202-L204">Clone</a>()
+</pre>
+
+Creates a copy of this [`JsonNode`](https://docs.microsoft.com/dotnet/api/system.text.json.nodes.jsonnode), or returns `null` if it is `null`.
+
+The following exceptions may be thrown:
+ * No exceptions should be thrown when using this method.
+
+Version history:
+ * This method was added in `0.2.0`.
+
 ## License
 
 Copyright (C) 2022 [viral32111](https://viral32111.com).

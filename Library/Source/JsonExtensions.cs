@@ -198,6 +198,11 @@ namespace viral32111.JsonExtensions {
 
 		}
 
+		// Copies a JSON node so it can be set in another JSON object
+		public static JsonNode? Clone( this JsonNode? node ) {
+			return JsonSerializer.Deserialize<JsonNode>( node ); // https://stackoverflow.com/a/71590703
+		}
+
 	}
 
 	// Exception for when parsing fails

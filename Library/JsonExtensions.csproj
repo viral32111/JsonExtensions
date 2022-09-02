@@ -12,7 +12,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>json; dotnet; package; nuget</PackageTags>
     <AssemblyVersion>$(FileVersion)</AssemblyVersion>
-    <FileVersion>0.1.2</FileVersion>
+    <FileVersion>0.2.0</FileVersion>
     <NeutralLanguage>en-GB</NeutralLanguage>
     <Version>$(FileVersion)</Version>
     <PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
