@@ -21,7 +21,7 @@ jobs:
     name: Library
     runs-on: ubuntu-22.04
     permissions:
-      contents: read
+      contents: write
       packages: write
 
     steps:
@@ -72,6 +72,17 @@ jobs:
           --skip-duplicate \
           --api-key ${{ secrets.GITHUB_TOKEN }} \
           ./Library/bin/Release/viral32111.JsonExtensions.*.nupkg
+
+    - name: Create Release
+      if: ${{ github.ref_type == 'tag' && github.event_name != 'pull_request' }}
+      uses: softprops/action-gh-release@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag_name: ${{ github.ref_name }}
+        draft: true
+        files: |
+          ./Library/bin/Release/net6.0/viral32111.JsonExtensions.dll
+          ./Library/bin/Release/viral32111.JsonExtensions.${{ github.ref_name }}.nupkg
 
   test:
     name: Test
