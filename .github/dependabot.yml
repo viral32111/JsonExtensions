@@ -1,0 +1,19 @@
+version: 2
+updates:
+  # Workflows
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+
+  # Library
+  - package-ecosystem: nuget
+    directory: /Library/
+    schedule:
+      interval: weekly
+
+  # Examples
+  - package-ecosystem: nuget
+    directory: /Examples/
+    schedule:
+      interval: weekly
