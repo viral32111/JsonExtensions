@@ -28,7 +28,6 @@ jobs:
           languages: csharp
 
       - name: Add GitHub Packages Source
-        if: ${{ github.ref_type == 'tag' && github.event_name != 'pull_request' }}
         run: |
           dotnet nuget add source \
             --name github \
