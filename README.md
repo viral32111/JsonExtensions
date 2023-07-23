@@ -1,6 +1,6 @@
 # JSON Extensions
 
-[![Build](https://github.com/viral32111/JsonExtensions/actions/workflows/build.yml/badge.svg)](https://github.com/viral32111/JsonExtensions/actions/workflows/build.yml)
+[![CI](https://github.com/viral32111/JsonExtensions/actions/workflows/ci.yml/badge.svg)](https://github.com/viral32111/JsonExtensions/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/viral32111/JsonExtensions/actions/workflows/codeql.yml/badge.svg)](https://github.com/viral32111/JsonExtensions/actions/workflows/codeql.yml)
 ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/viral32111/JsonExtensions?label=Latest)
 ![GitHub repository size](https://img.shields.io/github/repo-size/viral32111/JsonExtensions?label=Size)
