@@ -3,9 +3,9 @@ name: CI
 on:
   push:
     paths:
-      - 'JsonExtensions/'
-      - 'JsonExtensions.Examples/'
-      - 'JsonExtensions.Tests/'
+      - 'JsonExtensions/**/*'
+      - 'JsonExtensions.Examples/**/*'
+      - 'JsonExtensions.Tests/**/*'
       - 'JsonExtensions.sln'
       - '.github/workflows/ci.yml'
     branches:
