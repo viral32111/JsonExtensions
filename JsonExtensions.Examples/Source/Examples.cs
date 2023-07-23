@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text.Json.Nodes;
+using System.Collections.Generic;
 
 using viral32111.JsonExtensions;
 
@@ -9,7 +9,7 @@ namespace Examples {
 	public class Examples {
 
 		// The file to create, read & write to
-		private static readonly string filePath = "example.json";
+		private static readonly string filePath = Path.Combine( Path.GetTempPath(), "example.json" );
 
 		// Program starting point...
 		public static void Main() {
