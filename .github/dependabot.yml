@@ -9,12 +9,18 @@ updates:
 
   # Library
   - package-ecosystem: nuget
-    directory: /Library/
+    directory: /JsonExtensions/
     schedule:
       interval: monthly
 
   # Examples
   - package-ecosystem: nuget
-    directory: /Examples/
+    directory: /JsonExtensions.Examples/
+    schedule:
+      interval: monthly
+
+  # Tests
+  - package-ecosystem: nuget
+    directory: /JsonExtensions.Tests/
     schedule:
       interval: monthly

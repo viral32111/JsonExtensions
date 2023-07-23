@@ -1,0 +1,135 @@
+name: CI
+
+on:
+  push:
+    paths:
+      - 'JsonExtensions/'
+      - 'JsonExtensions.Examples/'
+      - 'JsonExtensions.Tests/'
+      - 'JsonExtensions.sln'
+      - '.github/workflows/ci.yml'
+    branches:
+      - '**'
+    tags:
+      - '*.*.*'
+  workflow_dispatch:
+
+jobs:
+  build-test:
+    name: Build & Test
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build projects
+        run: dotnet build --nologo --configuration Release --no-restore
+
+      - name: Run tests
+        run: dotnet test --nologo --configuration Release --no-build
+
+      - name: Launch examples
+        run: dotnet run --configuration Release --no-build --project JsonExtensions.Examples/JsonExtensions.Examples.csproj
+
+      - name: Package library
+        run: dotnet pack --nologo --configuration Release --no-build JsonExtensions/JsonExtensions.csproj
+
+      - name: Upload package artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: viral32111.JsonExtensions
+          path: |
+            JsonExtensions/bin/Release/net7.0/*
+            JsonExtensions/bin/Release/*.nupkg
+
+      - name: Upload examples artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: viral32111.JsonExtensions.Examples
+          path: JsonExtensions.Examples/bin/Release/net7.0/*
+
+      - name: Upload tests artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: viral32111.JsonExtensions.Tests
+          path: JsonExtensions.Tests/bin/Release/net7.0/*
+
+  publish:
+    name: Publish
+    runs-on: ubuntu-22.04
+    needs: build-test
+    if: ${{ github.ref_type == 'tag' }}
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
+      - name: Download package artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: viral32111.JsonExtensions
+          path: JsonExtensions
+
+      - name: Add GitHub Packages source
+        run: dotnet nuget add source --name github --username ${{ github.repository_owner }} --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
+
+      - name: Push NuGet package
+        run: dotnet nuget push --source github --skip-duplicate --api-key ${{ secrets.GITHUB_TOKEN }} JsonExtensions/viral32111.JsonExtensions.*.nupkg
+
+  release:
+    name: Release
+    runs-on: ubuntu-22.04
+    needs: build-test
+    if: ${{ github.ref_type == 'tag' }}
+    permissions:
+      packages: write
+    steps:
+      - name: Download package artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: viral32111.JsonExtensions
+          path: JsonExtensions
+
+      - name: Download examples artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: viral32111.JsonExtensions.Examples
+          path: JsonExtensions.Examples
+
+      - name: Download tests artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: viral32111.JsonExtensions.Tests
+          path: JsonExtensions.Tests
+
+      - name: Bundle package artifact
+        run: zip -r viral32111.JsonExtensions.zip JsonExtensions
+
+      - name: Bundle examples artifact
+        run: zip -r viral32111.JsonExtensions.Examples.zip JsonExtensions.Examples
+
+      - name: Bundle tests artifact
+        run: zip -r viral32111.JsonExtensions.Tests.zip JsonExtensions.Tests
+
+      - name: Create draft release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          tag_name: ${{ github.ref_name }}
+          files: viral32111.JsonExtensions*.zip
+          token: ${{ secrets.GITHUB_TOKEN }}
