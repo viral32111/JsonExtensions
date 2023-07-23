@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<OutputType>Exe</OutputType>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<RootNamespace>viral32111.JsonExtensions.Examples</RootNamespace>
+
+		<Title>JSON Extensions Examples</Title>
+		<Authors>viral32111</Authors>
+		<Copyright>Copyright (C) 2022-2023 viral32111</Copyright>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/viral32111/JsonExtensions</RepositoryUrl>
+		<NeutralLanguage>en-GB</NeutralLanguage>
+
+		<FileVersion>1.0.0</FileVersion>
+		<Version>$(FileVersion)</Version>
+		<AssemblyName>$(Authors).$(MSBuildProjectName)</AssemblyName>
+		<AssemblyVersion>$(FileVersion)</AssemblyVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\JsonExtensions\JsonExtensions.csproj" />
+	</ItemGroup>
+</Project>

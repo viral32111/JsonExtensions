@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<RootNamespace>viral32111.JsonExtensions</RootNamespace>
+
+		<Title>JSON Extensions</Title>
+		<Authors>viral32111</Authors>
+		<Description>Useful creation &amp; extension methods for System.Text.Json types.</Description>
+		<Copyright>Copyright (C) 2022-2023 viral32111</Copyright>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/viral32111/JsonExtensions</RepositoryUrl>
+		<NeutralLanguage>en-GB</NeutralLanguage>
+
+		<FileVersion>1.0.0</FileVersion>
+		<Version>$(FileVersion)</Version>
+		<AssemblyName>$(Authors).$(MSBuildProjectName)</AssemblyName>
+		<AssemblyVersion>$(FileVersion)</AssemblyVersion>
+
+		<PackageId>viral32111.JsonExtensions</PackageId>
+		<PackageProjectUrl>https://github.com/viral32111/JsonExtensions/packages/1617512</PackageProjectUrl>
+		<PackageTags>json; dotnet; package; nuget</PackageTags>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+</Project>
