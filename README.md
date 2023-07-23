@@ -1,11 +1,17 @@
 # JSON Extensions
 
-This is a NuGet package for .NET 6.0 that adds several creation and extension methods to [`System.Text.Json`](https://docs.microsoft.com/dotnet/api/system.text.json) data types, primarily for filesystem manipulation and accessing nested properties.
+[![Build](https://github.com/viral32111/JsonExtensions/actions/workflows/build.yml/badge.svg)](https://github.com/viral32111/JsonExtensions/actions/workflows/build.yml)
+[![CodeQL](https://github.com/viral32111/JsonExtensions/actions/workflows/codeql.yml/badge.svg)](https://github.com/viral32111/JsonExtensions/actions/workflows/codeql.yml)
+![GitHub tag (with filter)](https://img.shields.io/github/v/tag/viral32111/JsonExtensions?label=Latest)
+![GitHub repository size](https://img.shields.io/github/repo-size/viral32111/JsonExtensions?label=Size)
+![GitHub release downloads](https://img.shields.io/github/downloads/viral32111/JsonExtensions/total?label=Downloads)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/viral32111/JsonExtensions?label=Commits)
 
-## Usage
+This is a NuGet package for .NET 7.0 that adds several creation and extension methods to [`System.Text.Json`](https://docs.microsoft.com/dotnet/api/system.text.json) data types, primarily for filesystem manipulation and accessing nested properties.
+
+## 📥 Usage
 
 1. Add the latest version of the [`viral32111.JsonExtensions`](https://github.com/viral32111/JsonExtensions/packages/1617512) NuGet package to your .NET project.
-
 2. Include the namespace at the beginning of your C# source file(s) with the following code:
 
 ```csharp
@@ -159,7 +165,7 @@ The following exceptions may be thrown:
 Version history:
  * This method was added in `0.2.0`.
 
-## License
+## ⚖️ License
 
 Copyright (C) 2022-2023 [viral32111](https://viral32111.com).
 
