@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 namespace viral32111.JsonExtensions;
 
+/// <summary>
+/// Extension methods for nested JSON object properties.
+/// </summary>
 public static class NestedExtensions {
 
 	/// <summary>Sets the value of a nested JSON object property. If the property or parent JSON object does not exist, it will be created.</summary>
@@ -63,6 +66,7 @@ public static class NestedExtensions {
 	}
 
 	/// <summary>Gets the value of a nested JSON object property, casted to the given type.</summary>
+	/// <typeparam name="T">The type to cast the property value to. Can be nullable.</typeparam>
 	/// <param name="jsonObject">The JSON object.</param>
 	/// <param name="propertyPath">The nested path to the property, separated by <paramref name="propertyDelimiter"/>.</param>
 	/// <param name="propertyDelimiter">The character used to separate nested property names.</param>

@@ -4,33 +4,35 @@ using System.Collections.Generic;
 
 namespace viral32111.JsonExtensions;
 
+/// <summary>
+/// Extension methods for conversion of JSON types.
+/// </summary>
 public static class ConversionExtensions {
 
-	// Convert a JSON array to an array of a certain type
-	public static T[] AsArray<T>( this JsonNode array ) {
+	/// <summary>Converts a JSON array to a typed array.</summary>
+	/// <typeparam name="T">The type of the array. Can be nullable.</typeparam>
+	/// <param name="jsonArray">The JSON array.</param>
+	/// <returns>The JSON array as a typed array.</returns>
+	/// <exception cref="JsonPropertyNullException">Thrown if a value in the JSON array is null.</exception>
+	public static T[] AsArray<T>( this JsonNode jsonArray ) {
 
-		// Create an empty list
+		// Create an empty list of the desired type
 		List<T> list = new();
 
-		// Loop through each value in the JSON array...
-		foreach ( JsonNode? value in array.AsArray() ) {
-
-			// Fail if the value is invalid
-			if ( value == null ) throw new JsonPropertyNullException( $"Value is null'" );
-
-			// Add the value as the desired type to the list
+		// Add each value in the JSON array to the list, failing if it's null
+		foreach ( JsonNode? value in jsonArray.AsArray() ) {
+			if ( value == null ) throw new JsonPropertyNullException( $"Value '{ value }' within the JSON array is null" );
 			list.Add( value.GetValue<T>() );
-
 		}
 
-		// Return the list as an array
+		// Convert the list to an array then return it
 		return list.ToArray();
 
 	}
 
-	// Copies a JSON node so it can be set in another JSON object
-	public static JsonNode? Clone( this JsonNode? node ) {
-		return JsonSerializer.Deserialize<JsonNode>( node ); // https://stackoverflow.com/a/71590703
-	}
+	/// <summary>Copies a JSON node. Useful for reusing it in another JSON object.</summary>
+	/// <param name="jsonNode">Any JSON type.</param>
+	/// <returns>The copy of the given JSON node.</returns>
+	public static JsonNode? Clone( this JsonNode? node ) => JsonSerializer.Deserialize<JsonNode>( node ); // https://stackoverflow.com/a/71590703
 
 }

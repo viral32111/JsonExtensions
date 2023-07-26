@@ -3,7 +3,7 @@ using System.Text.Json;
 namespace viral32111.JsonExtensions;
 
 /// <summary>
-/// Default parameter values for methods provided by the library.
+/// Default parameter values for methods within this library.
 /// </summary>
 public static class Defaults {
 
