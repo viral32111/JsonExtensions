@@ -5,8 +5,8 @@
 ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/viral32111/JsonExtensions?label=Latest)
 ![Nuget](https://img.shields.io/nuget/v/viral32111.JsonExtensions?label=NuGet)
 ![GitHub repository size](https://img.shields.io/github/repo-size/viral32111/JsonExtensions?label=Size)
-![GitHub release downloads](https://img.shields.io/github/downloads/viral32111/JsonExtensions/total?label=Release Downloads)
-![Nuget](https://img.shields.io/nuget/dt/viral32111.JsonExtensions?label=NuGet%20Downloads)
+![GitHub release downloads](https://img.shields.io/github/downloads/viral32111/JsonExtensions/total?label=Downloads)
+![Nuget](https://img.shields.io/nuget/dt/viral32111.JsonExtensions?label=Installs)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/viral32111/JsonExtensions?label=Commits)
 
 This is a NuGet package for [.NET 7](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-7) that adds several creation and extension methods to [`System.Text.Json`](https://docs.microsoft.com/dotnet/api/system.text.json) data types, primarily for filesystem manipulation and accessing nested properties.
