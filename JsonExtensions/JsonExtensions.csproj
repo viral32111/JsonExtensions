@@ -19,17 +19,17 @@
 		<AssemblyVersion>$(FileVersion)</AssemblyVersion>
 
 		<PackageId>viral32111.JsonExtensions</PackageId>
-		<PackageProjectUrl>https://github.com/viral32111/JsonExtensions/packages/1617512</PackageProjectUrl>
-		<PackageTags>json; dotnet; package; nuget</PackageTags>
+		<PackageProjectUrl>https://github.com/viral32111/JsonExtensions</PackageProjectUrl>
+		<PackageTags>json-api; dotnet-core; nuget-package</PackageTags>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="..\README.md">
+		<None Include="../README.md">
 			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
+			<PackagePath>/</PackagePath>
 		</None>
 	</ItemGroup>
 </Project>
