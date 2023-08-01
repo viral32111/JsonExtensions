@@ -22,6 +22,13 @@ public class ConversionCloneTests {
 		Assert.Equal( 123, ( int? ) cloneObject[ "one" ] );
 	}
 
+	[ Fact ]
+	public void CloneNull() {
+		JsonNode? jsonNode = null;
+
+		Assert.Null( jsonNode.Clone() );
+	}
+
 	[ Theory ]
 	[ InlineData( "one.two", 123 ) ]
 	[ InlineData( "one.two.three", 456 ) ]
