@@ -19,8 +19,7 @@ jobs:
     name: Build & Test
     runs-on: ubuntu-22.04
     permissions:
-      contents: write
-      packages: write
+      contents: read
     steps:
       - name: Clone repository
         uses: actions/checkout@v3
