@@ -9,6 +9,8 @@
 
 This is a NuGet package for [.NET 7.0](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-7) that adds several creation and extension methods to [`System.Text.Json`](https://docs.microsoft.com/dotnet/api/system.text.json) data types, primarily for filesystem manipulation and accessing nested properties.
 
+Check out my [Server Monitor](https://github.com/viral32111/ServerMonitor) & [Twitch Bot](https://github.com/viral32111/TwitchBot) .NET projects that use this package!
+
 ## 📥 Usage
 
 1. Add the [`viral32111.JsonExtensions`] NuGet package to your .NET project, from either [GitHub Packages](https://github.com/viral32111/JsonExtensions/packages/1617512) or [NuGet Gallery](https://www.nuget.org/packages/viral32111.JsonExtensions/).
