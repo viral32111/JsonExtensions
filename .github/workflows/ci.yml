@@ -46,7 +46,7 @@ jobs:
         run: dotnet pack --nologo --configuration Release --no-build JsonExtensions/JsonExtensions.csproj
 
       - name: Upload package artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: viral32111.JsonExtensions
           path: |
@@ -54,13 +54,13 @@ jobs:
             JsonExtensions/bin/Release/*.nupkg
 
       - name: Upload examples artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: viral32111.JsonExtensions.Examples
           path: JsonExtensions.Examples/bin/Release/net7.0/*
 
       - name: Upload tests artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: viral32111.JsonExtensions.Tests
           path: JsonExtensions.Tests/bin/Release/net7.0/*
